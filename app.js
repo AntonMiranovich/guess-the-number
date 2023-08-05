@@ -22,6 +22,8 @@ function searchBenary(num, val) {
       break;
     } else if (val > centr) {
       start = centr;
+    } else if (val < centr) {
+      end = centr;
     }
   }
 }
