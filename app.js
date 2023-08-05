@@ -10,8 +10,20 @@ if (value < 0 || value > 100 || isNaN(value)) {
 function searchBenary(num, val) {
   let start = 0;
   let end = 100;
+  let count = 0;
 
-  
+  for (let i = 0; i < end; i++) {
+    let centr = Math.floor((start + end) / 2);
+    count++;
+    if (val === centr) {
+      alert(
+        `Вы угадали , поздровляем!!! Вам понадобилось количество попыток ${count}`
+      );
+      break;
+    } else if (val > centr) {
+      start = centr;
+    }
+  }
 }
 
 searchBenary(numRandom, value);
