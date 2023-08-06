@@ -9,22 +9,27 @@ function Binar(numRandomFun) {
       `Программа задает рандомное значение. Ваша задача угадать его. Введите число от ${start} до ${end}`
     );
     count++;
+    if (value < 0 || value > 100 || isNaN(value)) {
+      alert(`Вы ввели неверное значение.Введите число от ${start} до ${end}`);
+      continue;
+    }
     if (value == numRandomFun) {
-     alert(`Вы угадали. Поздровляем!!! Вам понадобилось попыток ${count}`);
+      alert(`Вы угадали. Поздровляем!!! Вам понадобилось попыток ${count}`);
       break;
     } else if (value > numRandomFun) {
       end = value;
       alert(
         `Вы ввели число ${value} и это слишком большое значение. Введите число от ${start} до ${end}`
       );
+      continue;
     } else if (value < numRandomFun) {
       start = value;
       alert(
         `Вы ввели число ${value} и это слишком маленькое значение. Введите число от ${start} до ${end}`
-      )
+      );
+      continue;
     }
   }
 }
 
 Binar(numRandom);
-
